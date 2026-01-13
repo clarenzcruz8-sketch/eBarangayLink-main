@@ -1,0 +1,94 @@
+.admin-account-header{
+    margin-block: 2rem;
+}
+
+.admin-account-header h1{
+    font-size: 30px;
+}
+
+.create-admin-btn{
+    margin-block: 1rem;
+    position: relative;
+}
+
+.create-admin-btn{
+    padding: 0.5rem;
+    background-color: #1E4E8C;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.create-admin-form{
+    /* position: absolute; */
+    /* height: 80px; */
+    display: none;
+    margin-block: 1rem;
+    background: #e5eef7;
+    width: 100%;
+    justify-self: center;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.admin-detail-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-detail-input label{
+    font-weight: 400;
+    font-family: var(--font-family-IBM);
+}
+
+.admin-detail-input input{
+    border: none;
+    padding: .5rem;
+    height: 30px;
+    margin-block: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.create-new-admin {
+    padding: 0.5rem;
+    background-color: #1E4E8C;
+    border-radius: 10px;
+    color: white;
+    margin-top: 10px;
+}
+
+
+
+
+.admin-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.admin-table-container th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.admin-table-container th {
+    background-color: #e5eef7;
+    color: black;
+    font-size: 16px;
+    font-weight: 200;
+}
+.admin-table-container td button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.edit-btn {
+    background-color: #27AE60;
+    color: white;
+}
+.disable-btn {
+    background-color: #EB5757;
+    
+    color: white;
+}   

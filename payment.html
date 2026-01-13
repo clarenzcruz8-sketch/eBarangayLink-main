@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/payment.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/src/cropped-logoicon.png" type="image/x-icon" />
+    <title>Payment - eBarangayLink | Parada</title>
+  </head>
+  <body onload="initClock()">
+    <!-- Philippine Flag Inspired Top Border! -->
+    <div class="gov-top-border">
+      <div class="border-blue"></div>
+      <div class="border-red"></div>
+    </div>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+      <!-- Sidebar Navigation -->
+      <aside class="dashboard-sidebar" id="dashboardSidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <img src="/src/logo.png" alt="eBarangayLink Logo" />
+            <div class="logo-text">
+              <span class="logo-title">eBarangayLink</span>
+              <span class="logo-subtitle">Resident Portal</span>
+            </div>
+          </div>
+          <button class="sidebar-toggle" id="sidebarToggle">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/user-dashboard.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span class="nav-text">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="apply-documents.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span class="nav-text">Apply Documents</span>
+              </a>
+            </li>
+
+            <li class="nav-item active">
+              <a href="payment.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <span class="nav-text">Payment</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="records.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  ></path>
+                </svg>
+                <span class="nav-text">Records</span>
+              </a>
+            </li>
+
+            <li class="nav-divider"></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="payment_summary_container">
+        <div class="payment-header">
+          <h1>💡 Payment Summary</h1>
+          <p>
+            Review your document details and choose your prefered payment
+            method.
+          </p>
+        </div>
+        <!-- summary of the request -->
+        <!-- <div class="payment_wrapper" id="payment">
+                        <h2>Payment Summary</h2>
+                        <p><strong>Document Type:</strong>Clearance</p>
+                        <p><strong>Purpose:</strong>Job Application</p>
+                        <p><strong>Reference No.:</strong></p>
+                        <p><strong>Amount Due:</strong>P50.00</p>
+                        <p><strong>Status:</strong>Pending</p>
+                    
+                    </div> -->
+        <div class="payment-option-wrapper">
+          <div class="fee-summary">
+            <table>
+              <thead>
+                <tr>
+                  <th>Document</th>
+                  <th>Purpose</th>
+                  <th>Amount</th>
+                  <th>Reference</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Clearance</td>
+                  <td>Job Application</td>
+                  <td>₱50.00</td>
+                  <td>123456</td>
+                  <td>🟢Paid</td>
+                </tr>
+                <tr>
+                  <td>Good Moral</td>
+                  <td>Job Application</td>
+                  <td>₱50.00</td>
+                  <td>78910</td>
+                  <td>🟡Pending</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="payment-options">
+            <h2>Payment Methods</h2>
+            <div class="payment-method-options">
+              <button id="gCashBtn" class="gCashBtn">GCash</button>
+              <button class="pay-in-person" id="inPerson">Pay in Person</button>
+            </div>
+
+            <!-- Online Payment -->
+            <div class="option gcash" id="uploadBox">
+              <img
+                src="/src/qrcode_267348383_c5e3e085f0555ef660d5874664014cbf.png"
+                alt=""
+                class="qrCode"
+              />
+
+              <div class="upload-box">
+                <p>
+                  📸📎 Upload proof of payment (accepted formats: JPG, PNG, PDF)
+                </p>
+                <input type="file" accept="image/*" />
+                <div class="upload-box-notice">
+                  <p>
+                    ⚠️ Please ensure your payment screenshot shows the correct
+                    amount and reference number. Confirmation may take up to 24
+                    hours.
+                  </p>
+                </div>
+                <button id="submitPaymentBtn">Submit Payment</button>
+
+                <!-- confirmation modal -->
+                <!-- <div class="verificationModal" id="verifyModal">
+                                           <div class="modal-card">
+                                               <h2>🟢Confirm Payment Submission</h2>
+                                               <h4>Are you sure you want to submit this payment?<br> You won’t be able to edit it afterward.</h4>
+                                               <button class="modalBtn" id="modalYes">Yes</button>
+                                               <button class="modalBtn" id="modalNo">No</button>
+                                           </div>
+                                       </div> -->
+              </div>
+            </div>
+
+            <!-- Pay in Person -->
+            <div class="option in-person" id="inPersonDisplay">
+              <h3>Pay at Barangay Hall</h3>
+              <p>
+                🏢 Visit your barangay hall with your valid ID and reference
+                number. Payment confirmation will be updated by staff.
+              </p>
+
+              <button>Mark as To Be Paid in Person</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <!-- <img src="/src/logo.png" alt=""> -->
+        <div class="datetime">
+          <div class="date">
+            <span id="dayname">Day</span>
+            <span id="month">Month</span>
+            <span id="daynum">00,</span>
+            <span id="year">Year</span>
+          </div>
+          <div class="time">
+            <span id="hour">00</span>: <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+          </div>
+        </div>
+        <!-- end of date n time -->
+
+        <!-- Reminder -->
+        <h1>Reminder <span>🔔</span></h1>
+        <div class="right-side-reminder">
+          <div class="reminder-content">
+            <strong>For Online payment</strong>
+            <p>
+              - Please complete your payment within 24 hours to avoid
+              cancellation.
+            </p>
+            <p>
+              - Payments are processed automatically. You’ll receive a
+              confirmation email once verified.
+            </p>
+
+            <strong>For In Person payment</strong>
+            <h5><span class="clock">🕘</span> Office Hours:</h5>
+            <p>Monday–Friday, 8:00 AM – 5:00 PM</p>
+            <p>Barangay Hall Closed on Weekends & Holidays</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- todo here -->
+    <!-- Add a Confirmation Modal
+
+When clicking “Submit Payment,” show:
+
+“Please confirm that your GCash name and number are correct before submitting.” -->
+
+    <!-- Confirmation Modal
+
+When clicking “Submit Payment,” show:
+
+“Please confirm that your GCash name and number are correct before submitting.” -->
+
+    <script src="/app/payment.js"></script>
+  </body>
+</html>

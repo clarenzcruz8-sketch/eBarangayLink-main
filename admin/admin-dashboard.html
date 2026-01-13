@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel= "icon" href="/src/cropped-logoicon.png" type="image/x-icon">
+  <title>Barangay Parada Admin Dashboard</title>
+  <link rel="stylesheet" href="/CSS/Admin css/admin-dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>Barangay Parada</h2>
+    </div>
+    <nav class="nav-menu">
+      <a href="/admin/admin-dashboard.html" class="nav-item active">
+        <span>Dashboard</span>
+      </a>
+      <a href="/admin/requests.html" class="nav-item">
+        <span>Requests</span>
+      </a>
+      <a href="/admin/payments.html" class="nav-item">
+        <span>Payments</span>
+      </a>
+    </nav>
+    <div class="logout">
+      <a href="/Sign-up.html" class="nav-item">
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <!-- TOP BAR -->
+    <header class="top-bar">
+      <h1>Dashboard</h1>
+      <div class="admin-profile">
+        <img src="/src/kato.jpg" alt="Admin" />
+        <span>Admin Alerta</span>
+      </div>
+    </header>
+
+    <!-- OVERVIEW CARDS -->
+    <section class="overview-cards">
+      <div class="card">
+        <h3>Total Requests</h3>
+        <p class="number">156</p>
+      </div>
+      <div class="card">
+        <h3>Approved</h3>
+        <p class="number approved">112</p>
+      </div>
+      <div class="card">
+        <h3>Pending Requests</h3>
+        <p class="number pending">44</p>
+      </div>
+    </section>
+
+    <!-- QUICK STATS (NOW WITH CSS ACCORDION) -->
+    <section class="quick-stats">
+      <details class="accordion">
+        <summary class="accordion-summary">Quick Stats Overview</summary>
+        <div class="accordion-content">
+          <div class="stat-box">
+            <h4>Today’s Requests</h4>
+            <p>12 New</p>
+          </div>
+          <div class="stat-box">
+            <h4>This Week’s Requests</h4>
+            <p>45 Total</p>
+          </div>
+          <div class="stat-box">
+            <h4>Approval Rate</h4>
+            <p>85%</p>
+          </div>
+          <div class="stat-box">
+            <h4>Weekly Payments</h4>
+            <p>₱3,250</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- REQUESTS TABLE (ADDED CHECKBOXES AND TOOLTIPS) -->
+    <section class="requests-table">
+      <h2>Recent Requests</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Document Type</th>
+              <th>Date Applied</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clarenz D. Cruz <span class="tooltip">View Profile<span class="tooltiptext">User ID: 12345<br>Last Active: Yesterday</span></span></td>
+              <td>Barangay Clearance</td>
+              <td>Oct 10, 2025</td>
+              <td><span class="status pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Joshua Santiago <span class="tooltip">View Profile<span class="tooltiptext">User ID: 67890<br>Last Active: Today</span></span></td>
+              <td>Good Moral Cert.</td>
+              <td>Oct 08, 2025</td>
+              <td><span class="status approved">Approved</span></td>
+            </tr>
+            <tr>
+              <td>Maria Santos <span class="tooltip">View Profile<span class="tooltiptext">User ID: 11223<br>Last Active: 2 days ago</span></span></td>
+              <td>Certificate of Residency</td>
+              <td>Nov 04, 2025</td>
+              <td><span class="status approved">Approved</span></td>
+            </tr>
+            <tr>
+              <td>John Doe <span class="tooltip">View Profile<span class="tooltiptext">User ID: 44556<br>Last Active: Today</span></span></td>
+              <td>Indigency Certificate</td>
+              <td>Nov 05, 2025</td>
+              <td><span class="status pending">Pending</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- RIGHT SIDEBAR (ADDED CSS ACCORDION FOR NOTIFICATIONS) -->
+  <aside class="right-sidebar">
+    <div class="clock">
+      <h1 id="time">--:-- --</h1>
+      <p id="date">Loading...</p>
+    </div>
+
+    <div class="notifications">
+      <details class="accordion">
+        <summary class="accordion-summary">Notifications (3 New)</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>
+              <p><strong>New Request:</strong> John Doe applied for Barangay Clearance.</p>
+              <span>2 mins ago</span>
+            </li>
+            <hr />
+            <li>
+              <p><strong>Payment Received:</strong> Jane Smith paid for Certificate of Residency.</p>
+              <span>1 hour ago</span>
+            </li>
+            <hr />
+            <li>
+              <p><strong>Request Approved:</strong> Joshua Santiago's Good Moral Cert.</p>
+              <span>3 hours ago</span>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </aside>
+  <script src="/app/Admin Javascript/admin-dashboard.js"></script>
+</body>
+</html>

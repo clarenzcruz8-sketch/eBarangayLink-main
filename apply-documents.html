@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/apply.css" />
+    <link rel="icon" href="/src/cropped-logoicon.png" type="image/x-icon" />
+    <title>Apply Documents - Barangay Parada</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Philippine Flag Inspired Top Border -->
+    <div class="gov-top-border">
+      <div class="border-blue"></div>
+      <div class="border-red"></div>
+    </div>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+      <!-- Sidebar Navigation -->
+      <aside class="dashboard-sidebar" id="dashboardSidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <img src="/src/logo.png" alt="eBarangayLink Logo" />
+            <div class="logo-text">
+              <span class="logo-title">eBarangayLink</span>
+              <span class="logo-subtitle">Resident Portal</span>
+            </div>
+          </div>
+          <button class="sidebar-toggle" id="sidebarToggle">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/user-dashboard.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span class="nav-text">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item active">
+              <a href="apply-documents.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span class="nav-text">Apply Documents</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="payment.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <span class="nav-text">Payment</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="records.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  ></path>
+                </svg>
+                <span class="nav-text">Records</span>
+              </a>
+            </li>
+
+            <li class="nav-divider"></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-main">
+        <div class="container apply-documents">
+          <!-- Main Headings -->
+          <div class="main-apply-headings">
+            <span class="main-image-logo">
+              <img src="/src/logo.png" alt="Barangay Logo" />
+            </span>
+            <h1>Apply for Documents Online</h1>
+            <p>
+              Submit your application for barangay documents conveniently from
+              home
+            </p>
+          </div>
+
+          <!-- Directions -->
+          <div class="directions" id="direction">
+            <h2>How to apply</h2>
+            <p>1. Choose the type of documents you want to apply</p>
+            <p>2. Fill up the forms</p>
+            <p>3. Submit the form</p>
+            <p>4. Wait for Verification</p>
+          </div>
+
+          <!-- Document Type Selector -->
+          <div class="apply_wrapper">
+            <label for="documentType">Select Document Type:</label>
+            <select id="documentType" name="documentType" required>
+              <option value="" disabled selected>
+                -- Select a Document --
+              </option>
+              <option value="clearance">Barangay Clearance</option>
+              <option value="residency">Certificate of Residency</option>
+              <option value="indigency">Certificate of Indigency</option>
+              <option value="houseOwnership">House Ownership</option>
+              <option value="business-permit">Business Permit</option>
+              <option value="good-moral">Good Moral</option>
+              <option value="health">Certificate of Health</option>
+              <option value="scholarship">Certificate of Scholarship</option>
+            </select>
+          </div>
+
+          <!-- Forms Container -->
+          <div class="fill-up-container">
+            <!-- Form for Clearance -->
+            <div class="fill-up-form form-clearance">
+              <h2>Barangay Clearance Form</h2>
+              <form action="" id="BC_form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="barangay_clearance">
+                <div class="form-group">
+                  <div id="BCfn" class="BC-error-message"></div>
+                  <label for="full_name">Full Name:</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    id="fname"
+                    placeholder="e.g. Juan Dela Cruz"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BCdob" class="BC-error-message"></div>
+                  <label for="date_of_birth">Date of Birth:</label>
+                  <input
+                    type="date"
+                    name="date_of_birth"
+                    id="date_of_birth"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BCresidency" class="BC-error-message"></div>
+                  <label for="years_of_residency">Years of residency</label>
+                  <input
+                    type="number"
+                    name="years_of_residency"
+                    id="years_of_residency"
+                    placeholder="Example: 4"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="occupation" class="BC-error-message"></div>
+                  <label for="occupation">Occupation</label>
+                  <input
+                    type="text"
+                    name="occupation"
+                    id="occupation"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BCtelephone" class="BC-error-message"></div>
+                  <label for="mobile_number">* Mobile Number:</label>
+                  <input
+                    type="tel"
+                    name="mobile_number"
+                    id="mobile_number"
+                    placeholder="1234-567-890"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BCfile" class="BC-error-message"></div>
+                  <label for="valid_id_file">* Upload Valid Id</label>
+                  <input type="file" name="valid_id_file" id="file" required />
+                </div>
+
+                <div class="form-group">
+                  <div id="BCsignature" class="BC-error-message"></div>
+                  <label for="signature_file">* Signature(Upload):</label>
+                  <input
+                    type="file"
+                    name="signature_file"
+                    id="signature"
+                    placeholder="Upload"
+                    accept="image/png"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BCpurpose" class="BC-error-message"></div>
+                  <label for="purpose">Purpose of request:</label>
+                  <textarea name="purpose" id="purpose" required></textarea>
+                </div>
+
+                <fieldset class="fieldset">
+                  <div class="form-group">
+                    <label for="barangay">Barangay</label>
+                    <input
+                      type="text"
+                      name="barangay"
+                      id="barangay"
+                      placeholder="Parada"
+                      readonly
+                    />
+
+                    <label for="house_no">House No.: (Optional)</label>
+                    <input
+                      type="text"
+                      name="house_no"
+                      id="house_no"
+                      placeholder="Enter House No."
+                    />
+
+                    <div id="BCstreet" class="BC-error-message"></div>
+                    <label for="street">* Street</label>
+                    <input type="text" name="street" id="street" required />
+                  </div>
+                </fieldset>
+
+                <div class="submit-button">
+                  <button type="submit" id="submitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Form for Residency -->
+            <div class="fill-up-form form-residency">
+              <h2>Barangay Residency Form</h2>
+              <form action="" id="CR_form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="residency">
+                <div class="form-group">
+                  <div id="CRfnError" class="CR-error-message"></div>
+                  <label for="full_name">Full Name:</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    id="CRfn"
+                    placeholder="e.g. Juan Dela Cruz"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CRdateError" class="CR-error-message"></div>
+                  <label for="date_of_birth">Date of Birth:</label>
+                  <input
+                    type="date"
+                    name="date_of_birth"
+                    id="CRdate"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CRresidencyError" class="CR-error-message"></div>
+                  <label for="years_of_residency">Years of residency</label>
+                  <input
+                    type="number"
+                    name="years_of_residency"
+                    id="CRresidency"
+                    placeholder="Example: 4"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CRpobError" class="CR-error-message"></div>
+                  <label for="place_of_birth">Place of birth</label>
+                  <input
+                    type="text"
+                    name="place_of_birth"
+                    id="CRpob"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CRtelephoneError" class="CR-error-message"></div>
+                  <label for="mobile_number">* Mobile Number:</label>
+                  <input
+                    type="tel"
+                    name="mobile_number"
+                    id="CRtelephone"
+                    placeholder="0917-234-5678"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CRfileError" class="CR-error-message"></div>
+                  <label for="valid_id_file">* Upload Valid Id</label>
+                  <input type="file" name="valid_id_file" id="CRfile" required />
+                </div>
+
+                <div class="form-group">
+                  <div id="CRsignatureError" class="CR-error-message"></div>
+                  <label for="signature_file">* Signature(Upload):</label>
+                  <input
+                    type="file"
+                    name="signature_file"
+                    id="CRsignature"
+                    placeholder="Upload"
+                    accept="image/png"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CRpurposeError" class="CR-error-message"></div>
+                  <label for="purpose">Purpose of request:</label>
+                  <textarea name="purpose" id="CRpurpose"></textarea>
+                </div>
+
+                <fieldset class="fieldset">
+                  <div class="form-group">
+                    <label for="barangay">Barangay</label>
+                    <input
+                      type="text"
+                      name="barangay"
+                      placeholder="Parada"
+                      readonly
+                    />
+
+                    <label for="house_no">House No.: (Optional)</label>
+                    <input
+                      type="text"
+                      name="house_no"
+                      placeholder="Enter House No."
+                    />
+
+                    <div id="CRstreetError" class="CR-error-message"></div>
+                    <label for="street">* Street</label>
+                    <input type="text" name="street" id="CRstreet" required />
+                  </div>
+                </fieldset>
+
+                <div class="submit-button">
+                  <button type="submit" id="CRsubmitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Form for Indigency -->
+            <div class="fill-up-form form-indigency">
+              <h2>Barangay Indigency Form</h2>
+              <form action="" id="CI_form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="indigency">
+                <div class="form-group">
+                  <div id="CIfnError" class="CI-error-message"></div>
+                  <label for="full_name">Full Name:</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    id="CIfn"
+                    placeholder="e.g. Juan Dela Cruz"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CIdobError" class="CI-error-message"></div>
+                  <label for="date_of_birth">Date of Birth:</label>
+                  <input
+                    type="date"
+                    name="date_of_birth"
+                    id="CIdate"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CI_incomeError" class="CI-error-message"></div>
+                  <label for="monthly_income">Monthly Income (₱)</label>
+                  <input
+                    type="text"
+                    name="monthly_income"
+                    id="CI_income"
+                    placeholder="e.g 10000"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CIoccupationError" class="CI-error-message"></div>
+                  <label for="occupation">Occupation</label>
+                  <input
+                    type="text"
+                    name="occupation"
+                    id="CIoccupation"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CItelephoneError" class="CI-error-message"></div>
+                  <label for="mobile_number">* Mobile Number:</label>
+                  <input
+                    type="tel"
+                    name="mobile_number"
+                    id="CItelephone"
+                    placeholder="0917-234-5678"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CI_IDError" class="CI-error-message"></div>
+                  <label for="valid_id_file">* Upload Valid Id</label>
+                  <input type="file" name="valid_id_file" id="CI_ID" required />
+                </div>
+
+                <div class="form-group">
+                  <div id="CI_signatureError" class="CI-error-message"></div>
+                  <label for="signature_file">* Signature(Upload):</label>
+                  <input
+                    type="file"
+                    name="signature_file"
+                    id="CI_signature"
+                    placeholder="Upload"
+                    accept="image/png"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CI_purposeError" class="CI-error-message"></div>
+                  <label for="purpose">Purpose of request:</label>
+                  <textarea name="purpose" id="CI_purpose" required></textarea>
+                </div>
+
+                <fieldset class="fieldset">
+                  <div class="form-group">
+                    <label for="barangay">Barangay</label>
+                    <input
+                      type="text"
+                      name="barangay"
+                      placeholder="Parada"
+                      readonly
+                    />
+
+                    <label for="house_no">House No.: (Optional)</label>
+                    <input
+                      type="text"
+                      name="house_no"
+                      placeholder="Enter House No."
+                    />
+
+                    <div id="CI_streetError" class="CI-error-message"></div>
+                    <label for="street">* Street</label>
+                    <input type="text" name="street" id="CI_street" />
+                  </div>
+                </fieldset>
+
+                <div class="submit-button">
+                  <button type="submit" id="CI_submitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Form for House Ownership -->
+            <div class="fill-up-form form-houseOwnership">
+              <h2>Form for Certificate of House Ownership</h2>
+              <form action="" id="HO_form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="house_ownership">
+                <div class="form-group">
+                  <div id="HOfnError" class="HO-error-message"></div>
+                  <label for="full_name">Full Name:</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    id="HOfn"
+                    placeholder="e.g. Juan Dela Cruz"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="HO_ownershipError" class="HO-error-message"></div>
+                  <label for="type_of_ownership">Type of ownership</label>
+                  <select name="ownership_type" id="HO_ownership">
+                    <option value="" disabled selected>
+                      -- Type of Ownership --
+                    </option>
+                    <option value="Owned">Owned</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Family property">Family property</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div id="HO_residencyError" class="HO-error-message"></div>
+                  <label for="years_of_residency">Years of residency</label>
+                  <input
+                    type="number"
+                    name="years_of_residency"
+                    id="HO_residency"
+                    placeholder="Example: 4"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="HO_telephoneError" class="HO-error-message"></div>
+                  <label for="contact_number">Contact Number:</label>
+                  <input
+                    type="tel"
+                    name="contact_number"
+                    id="HO_telephone"
+                    placeholder="0917-234-5678"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="HO_attachmentsError" class="HO-error-message"></div>
+                  <label for="attachments_file"
+                    >Required Attachments:</label
+                  >
+                  <input type="file" name="attachments_file" id="attachments_file" required />
+                </div>
+
+                <div class="form-group">
+                  <div
+                    id="HO_taxDeclarationError"
+                    class="HO-error-message"
+                  ></div>
+                  <label for="tax_declaration_file"
+                    >Tax Declaration / Lease Agreement / Deed of Sale</label
+                  >
+                  <input
+                    type="file"
+                    name="tax_declaration_file"
+                    id="HO_taxDeclaration"
+                    required
+                  />
+                </div>
+
+                <fieldset class="fieldset">
+                  <div class="form-group">
+                    <label for="barangay">Barangay</label>
+                    <select name="barangay">
+                      <option value="Parada">Parada</option>
+                    </select>
+
+                    <label for="house_no">House No.: (Optional)</label>
+                    <input
+                      type="text"
+                      name="house_no"
+                      placeholder="Enter House No."
+                    />
+
+                    <div id="HO_streetError" class="HO-error-message"></div>
+                    <label for="street">* Street</label>
+                    <input type="text" name="street" id="HO_street" />
+                  </div>
+                </fieldset>
+
+                <div class="submit-button">
+                  <button type="submit" id="HO_submitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Form for Business Permit -->
+            <div class="fill-up-form form-business-permit">
+              <h2>Business Permit Application Form</h2>
+              <form action="" id="BP_form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="business_permit">
+                <div class="form-group">
+                  <div id="BPbnError" class="BP-error-message"></div>
+                  <label for="business_name">Business Name:</label>
+                  <input
+                    type="text"
+                    name="business_name"
+                    id="BPbn"
+                    placeholder="e.g. Santos Sari-Sari Store"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPowError" class="BP-error-message"></div>
+                  <label for="owner_name">Business Owner's Full Name:</label>
+                  <input
+                    type="text"
+                    name="owner_name"
+                    id="BPow"
+                    placeholder="e.g. Juan Dela Cruz"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPbaError" class="BP-error-message"></div>
+                  <label for="business_address">Business Address:</label>
+                  <input
+                    type="text"
+                    name="business_address"
+                    id="BPba"
+                    placeholder="e.g. Barangay Sta. Lucia, Building #23"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPbtError" class="BP-error-message"></div>
+                  <label for="business_type">Type of Business:</label>
+                  <input type="text" name="business_type" id="BPbt" required />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPsdError" class="BP-error-message"></div>
+                  <label for="start_date">Business Start Date:</label>
+                  <input type="date" name="start_date" id="BPsd" required />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPdti_secError" class="BP-error-message"></div>
+                  <label for="dti_sec_no">DTI / SEC Registration No.:</label>
+                  <input
+                    type="text"
+                    name="dti_sec_no"
+                    id="BPdti_sec"
+                    placeholder="e.g. DTI-12345"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPtinError" class="BP-error-message"></div>
+                  <label for="tin">Tax Identification Number (TIN):</label>
+                  <input
+                    type="text"
+                    name="tin"
+                    id="BPtin"
+                    placeholder="e.g. 123-456-789"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPbdcError" class="BP-error-message"></div>
+                  <label for="business_docs_file">Upload Business Documents:</label>
+                  <input
+                    type="file"
+                    name="business_docs_file"
+                    id="BPbdc"
+                    accept=".pdf,.jpg,.png"
+                    multiple
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPviError" class="BP-error-message"></div>
+                  <label for="valid_id_file">Upload Valid ID of Owner:</label>
+                  <input
+                    type="file"
+                    name="valid_id_file"
+                    id="BPvi"
+                    accept=".pdf,.jpg,.png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPpurposeError" class="BP-error-message"></div>
+                  <label for="purpose">Purpose of Request:</label>
+                  <select name="purpose" id="BPpurpose" required>
+                    <option value="" disabled selected>
+                      -- Select Purpose --
+                    </option>
+                    <option value="Renewal">Renewal</option>
+                    <option value="New Permit">New Permit</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div id="BPsignatureError" class="BP-error-message"></div>
+                  <label for="signature_file">Signature / Digital Approval:</label>
+                  <input
+                    type="file"
+                    name="signature_file"
+                    id="BPsignature"
+                    accept=".jpg,.png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="BPcontactnumError" class="BP-error-message"></div>
+                  <label for="contact_number">Contact Number:</label>
+                  <input
+                    type="tel"
+                    name="contact_number"
+                    id="BPcontactnum"
+                    placeholder="e.g. 0917-234-5678"
+                    required
+                  />
+
+                  <div id="BPemailError" class="BP-error-message"></div>
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="BPemail"
+                    placeholder="e.g. business@email.com"
+                    required
+                  />
+                </div>
+
+                <div class="submit-button">
+                  <button type="submit" id="BP_submitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Form for Good Moral -->
+            <div class="fill-up-form form-good-moral">
+              <h2>Good Moral Form</h2>
+              <form action="" id="GM_form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="good_moral">
+                <div class="form-group">
+                  <div id="GMfnError" class="GM-error-message"></div>
+                  <label for="full_name">Full Name:</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    id="GMfn"
+                    placeholder="e.g. Juan Dela Cruz"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="GMdobError" class="GM-error-message"></div>
+                  <label for="date_of_birth">Date of Birth:</label>
+                  <input
+                    type="date"
+                    name="date_of_birth"
+                    id="GMdob"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="institution"
+                    >Name of Institution: (Optional)</label
+                  >
+                  <input type="text" name="institution" />
+                </div>
+
+                <div class="form-group">
+                  <div id="GMresidencyError" class="GM-error-message"></div>
+                  <label for="years_of_residency">Years of residency</label>
+                  <input
+                    type="number"
+                    name="years_of_residency"
+                    id="GMresidency"
+                    placeholder="Example: 4"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="GMviError" class="GM-error-message"></div>
+                  <label for="valid_id_file">Valid ID</label>
+                  <input
+                    type="file"
+                    name="valid_id_file"
+                    id="GMvi"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="GMletterError" class="GM-error-message"></div>
+                  <label for="request_letter_file">Endorsement/Request Letter</label>
+                  <input
+                    type="file"
+                    name="request_letter_file"
+                    id="GMletter"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="GMraError" class="GM-error-message"></div>
+                  <label for="attachments_file"
+                    >Required Attachments:</label
+                  >
+                  <input
+                    type="file"
+                    name="attachments_file"
+                    id="GMra"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <fieldset class="fieldset">
+                  <div class="form-group">
+                    <label for="barangay">Barangay</label>
+                    <input
+                      type="text"
+                      name="barangay"
+                      placeholder="Parada"
+                      readonly
+                    />
+
+                    <label for="house_no">House No.: (Optional)</label>
+                    <input
+                      type="text"
+                      name="house_no"
+                      placeholder="Enter House No."
+                    />
+
+                    <div id="GMstreetError" class="GM-error-message"></div>
+                    <label for="street">* Street</label>
+                    <input type="text" name="street" id="GMstreet" />
+                  </div>
+                </fieldset>
+
+                <div class="submit-button">
+                  <button type="submit" id="GM_submitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Form for Health -->
+            <div class="fill-up-form form-health">
+              <h2>Health Form</h2>
+              <form action="" id="CH_form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="health">
+                <div class="form-group">
+                  <div id="CHfnError" class="CH-error-message"></div>
+                  <label for="full_name">Full Name:</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    id="CHfn"
+                    placeholder="e.g. Juan Dela Cruz"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CHdobError" class="CH-error-message"></div>
+                  <label for="date_of_birth">Date of Birth:</label>
+                  <input
+                    type="date"
+                    name="date_of_birth"
+                    id="CHdob"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CHresidencyError" class="CH-error-message"></div>
+                  <label for="occupation">Occupation/Employer:</label>
+                  <input type="text" name="occupation" id="CHresidency" />
+                </div>
+
+                <div class="form-group">
+                  <div id="CHtelephoneError" class="CH-error-message"></div>
+                  <label for="attachments_file"
+                    >Required Attachments:</label
+                  >
+                  <input
+                    type="file"
+                    name="attachments_file"
+                    id="CHtelephone"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="medical_exam_file"
+                    >Medical Exam Result (if available)</label
+                  >
+                  <input
+                    type="file"
+                    name="medical_exam_file"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CHviError" class="CH-error-message"></div>
+                  <label for="valid_id_file">Valid ID</label>
+                  <input
+                    type="file"
+                    name="valid_id_file"
+                    id="CHvi"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CHpurposeError" class="CH-error-message"></div>
+                  <label for="purpose">Purpose of request:</label>
+                  <textarea name="purpose" id="CHpurpose"></textarea>
+                </div>
+
+                <div class="submit-button">
+                  <button type="submit" id="CH_submitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Form for Scholarship -->
+            <div class="fill-up-form form-scholarship">
+              <h2>Certificate of Scholarship</h2>
+              <form id="CS_form">
+                <input type="hidden" name="formType" value="scholarship">
+                <div class="form-group">
+                  <div id="CSfnError" class="CS-error-message"></div>
+                  <label for="full_name">Full Name:</label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    id="CSfn"
+                    placeholder="e.g. Juan Dela Cruz"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CSschoolError" class="CS-error-message"></div>
+                  <label for="school_name">School Name:</label>
+                  <input
+                    type="text"
+                    name="school_name"
+                    id="CSschool"
+                    placeholder="e.g. PUP"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CSyearError" class="CS-error-message"></div>
+                  <label for="year_course">Year Level/Course:</label>
+                  <input
+                    type="text"
+                    name="year_course"
+                    id="CSyear"
+                    placeholder="e.g. BSIT 3-2"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CSraError" class="CS-error-message"></div>
+                  <label for="attachments_file"
+                    >Required Attachments:</label
+                  >
+                  <input
+                    type="file"
+                    name="attachments_file"
+                    id="CSra"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CSschoolIDError" class="CS-error-message"></div>
+                  <label for="school_id_file">School ID</label>
+                  <input
+                    type="file"
+                    name="school_id_file"
+                    id="CSschoolID"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div id="CScorError" class="CS-error-message"></div>
+                  <label for="residency_certificate_file"
+                    >Certificate of Residency</label
+                  >
+                  <input
+                    type="file"
+                    name="residency_certificate_file"
+                    id="CScor"
+                    placeholder="Upload"
+                    accept="image/png"
+                  />
+                </div>
+
+                <fieldset class="fieldset">
+                  <div class="form-group">
+                    <label for="barangay">Barangay</label>
+                    <select name="barangay">
+                      <option value="Parada">Parada</option>
+                    </select>
+
+                    <label for="house_no">House No.: (Optional)</label>
+                    <input
+                      type="text"
+                      name="house_no"
+                      placeholder="Enter House No."
+                    />
+
+                    <div id="CSstreetError" class="CS-error-message"></div>
+                    <label for="street">* Street</label>
+                    <input type="text" name="street" id="CSstreet" />
+                  </div>
+                </fieldset>
+
+                <div class="submit-button">
+                  <button type="submit" id="CS_submitBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Downloadable Forms Section -->
+          <h1 class="downloadable-h1">Downloadable Forms & Guides</h1>
+          <p class="downloadable-p">
+            Access forms and step-by-step instructions for common barangay
+            services
+          </p>
+
+          <div class="downloadable-container">
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>Barangay Clearance Application</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>Certificate of Residency Application</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>Certificate of Indigency Application</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>Business Permit Application</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>Certificate of Good Moral</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>Health Certificate Application</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>House Ownership Certificate</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="downloadable-cards">
+              <span class="downloadable-cards-header">
+                <img src="/src/file-card.png" alt="" />
+                <h4>Scholarship Certificate Application</h4>
+              </span>
+              <div class="download-cards-details">
+                <h5>How to Apply:</h5>
+                <p>
+                  <span class="colored-number">1.</span> Download and print the
+                  application form
+                </p>
+                <p>
+                  <span class="colored-number">2.</span> Fill out all required
+                  information completely
+                </p>
+                <p>
+                  <span class="colored-number">3.</span> Attach 1 valid ID
+                  (photocopy)
+                </p>
+                <p>
+                  <span class="colored-number">4.</span> Submit to the Barangay
+                  Secretary
+                </p>
+                <p>
+                  <span class="colored-number">5.</span> Pay the processing fee
+                </p>
+                <p>
+                  <span class="colored-number">6.</span> Claim after 3 working
+                  days
+                </p>
+                <a
+                  href="/downloadable form/ART-APPRECIATION-Lesson-2 (2).pdf"
+                  download
+                >
+                  <img src="/src/download-icon.svg" alt="" />
+                  <p>Download File (PDF)</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reminder Box -->
+          <div class="downloadable-reminder">
+            <h4>For Students & First-time Applicants</h4>
+            <ul>
+              <li>
+                <span>Office Hours:</span> Monday to Friday 8:00 AM - 5:00 PM
+              </li>
+              <li>
+                <span>What to Bring:</span> Valid ID, proof of residency, and
+                any supporting documents
+              </li>
+              <li>
+                <span>Processing Time:</span> Most documents are ready within
+                2-3 working days
+              </li>
+              <li>
+                <span>Need Help?</span> Visit Barangay Hall or call us through
+                the <a href="#feedback-section">Feedback section</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Community Feedback Section -->
+          <div class="community-feedback-container" id="feedback-section">
+            <div class="community-feedback-wrapper">
+              <div class="community-headings">
+                <img src="/src/message.svg" alt="Feedback Icon" />
+                <h1>Community Feedback</h1>
+                <p>
+                  Help us improve by sharing your suggestions, reporting issues,
+                  or questions
+                </p>
+              </div>
+              <div class="community-feedback-form">
+                <h3>Send Us Your Feedback</h3>
+                <p>Your input helps us serve the community better</p>
+
+                <form action="">
+                  <div class="feedback-form-group">
+                    <label for="feedback-name">Name (Optional)</label>
+                    <input
+                      type="text"
+                      name="feedback-name"
+                      id="feedback-name"
+                    />
+                  </div>
+
+                  <div class="feedback-form-group">
+                    <label for="feedback-email">Email (Optional)</label>
+                    <input
+                      type="email"
+                      name="feedback-email"
+                      id="feedback-email"
+                    />
+                  </div>
+
+                  <div class="feedback-form-group textarea-span">
+                    <label for="feedback-message">Message</label>
+                    <textarea
+                      name="feedback-message"
+                      id="feedback-message"
+                    ></textarea>
+                  </div>
+
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/app/main.js"></script>
+  </body>
+</html>

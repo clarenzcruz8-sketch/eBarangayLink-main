@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/records.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/src/cropped-logoicon.png" type="image/x-icon" />
+    <title>Records - eBarangayLink | Parada</title>
+  </head>
+  <body>
+    <!-- Philippine Flag Inspired Top Border -->
+    <div class="gov-top-border">
+      <div class="border-blue"></div>
+      <div class="border-red"></div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+      <!-- Sidebar Navigation -->
+      <aside class="dashboard-sidebar" id="dashboardSidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <img src="/src/logo.png" alt="eBarangayLink Logo" />
+            <div class="logo-text">
+              <span class="logo-title">eBarangayLink</span>
+              <span class="logo-subtitle">Resident Portal</span>
+            </div>
+          </div>
+          <button class="sidebar-toggle" id="sidebarToggle">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/user-dashboard.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span class="nav-text">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="apply-documents.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span class="nav-text">Apply Documents</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="payment.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <span class="nav-text">Payment</span>
+              </a>
+            </li>
+
+            <li class="nav-item active">
+              <a href="records.html" class="nav-link">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  ></path>
+                </svg>
+                <span class="nav-text">Records</span>
+              </a>
+            </li>
+
+            <li class="nav-divider"></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="records_container">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            Document Records
+          </h1>
+          <p class="page-subtitle">
+            View and download your submitted documents
+          </p>
+        </div>
+
+        <!-- Table -->
+        <div class="table-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Reference No.</th>
+                <th>Document Type</th>
+                <th>Date Requested</th>
+                <th>Payment Status</th>
+                <th>Approval Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BRGY-2025-001</td>
+                <td>Barangay Clearance</td>
+                <td>Oct 5, 2025</td>
+                <td><span class="status paid">Paid</span></td>
+                <td><span class="status approve">Approved</span></td>
+                <td>
+                  <button class="download">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"
+                      ></path>
+                    </svg>
+                    Download
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>BRGY-2025-002</td>
+                <td>Certificate of Good Moral</td>
+                <td>Oct 7, 2025</td>
+                <td><span class="status pending">Pending</span></td>
+                <td><span class="status pending">For Review</span></td>
+                <td>
+                  <button class="download-btn" disabled>Not Ready</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app/records.js"></script>
+  </body>
+</html>

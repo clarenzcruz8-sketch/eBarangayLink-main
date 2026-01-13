@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <title>Document</title>
+</head>
+<body>
+      <div class="document-super-admin-dashboard-container">
+         <aside>
+                <div class="sidebar">
+                    <div class="logo">
+                        <img src="/src/logo.png" alt="">
+                    </div>
+                         <ul>
+                            <li  >
+                                
+                                <a href="super-admin-dashboard.html">Dashboard</a>
+                            </li>
+                            <li >
+                               
+                              
+                                <a href="Admin-account.html">Admin Account</a>
+                            </li>
+                            <li class="active">
+                               
+                              
+                                <a href="All-request.html">All Request</a>
+                            </li>
+                         
+
+                             <li>
+                               
+                                <a href="Roles-permission.html">Roles & Permission</a>
+                            </li>
+                            <!-- <li><a href="">Profile</a></li> -->
+                            <li>
+                                <span class="last-child">
+                                    
+                                 
+                                    <button class="logoutBtn" href="" id="logoutBtn">Logout </button>
+                                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>  
+            </aside>
+
+            <div class="all-request">
+                    <h2>List of All Request</h2>
+                    <table class="SA-summary-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Document Type</th>
+                                <th>Date Requested</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>Dela Cruz</td>
+                            <td>Residency</td>
+                            <td>Nov 2, 2025</td>
+                            <td><span class="status pending">Pending</span></td>
+                                <td><button class="SA-download-btn" disabled style="opacity: 0.6;">View</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Kurt</td>
+                            <td>Barangay Clearance</td>
+                            <td>Oct 25, 2025</td>
+                            <td><span class="status ready">Approved</span></td>
+                                <td><button class="SA-download-btn" disabled style="opacity: 0.6;">View</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Albert</td>
+                            <td>Good Moral</td>
+                            <td>Oct 20, 2025</td>
+                            <td><span class="status ready">Approved</span></td>
+                                <td><button class="SA-download-btn" disabled style="opacity: 0.6;">View</button></td>
+                        </tr>
+                        </tbody>
+                </table>
+
+                <table class="SA-auditlogs-table">
+                    <div class="SA-auditlogs-header">
+                        <h2>Request Audit Logs</h2>
+                    </div>
+                    <p class="subtitle">
+                        System-generated activity logs for transparency and accountability
+                    </p>
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Request ID</th>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                            <td>Oct 10, 2025 – 10:15 AM</td>
+                            <td>RQ-001</td>
+                            <td>Maria Santos</td>
+                            <td>Admin</td>
+                            <td class="action approved">Approved</td>
+                            <td>Barangay Clearance request approved</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 10, 2025 – 10:20 AM</td>
+                            <td>RQ-001</td>
+                            <td>System</td>
+                            <td>System</td>
+                            <td class="action updated">Status Updated</td>
+                            <td>Status changed from Pending to Approved</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 9, 2025 – 3:40 PM</td>
+                            <td>RQ-002</td>
+                            <td>Paulo Reyes</td>
+                            <td>Admin</td>
+                            <td class="action assigned">Assigned</td>
+                            <td>Request assigned by Super Admin</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 9, 2025 – 3:55 PM</td>
+                            <td>RQ-003</td>
+                            <td>Super Admin</td>
+                            <td>Super Admin</td>
+                            <td class="action rejected">Rejected</td>
+                            <td>Invalid payment proof</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>
+            <div class="superadmin-right-side">
+                <div class="audit-logs">
+                    <h1>Audit Logs</h1>
+                    <div class="audit-logs-notif">
+                        <p><span>Admin</span> Juan approved Request #122</p>
+                        <p><span>Admin</span> Maria edited payment settings</p>
+                      
+                    </div>
+                </div>
+            </div>
+     </div>
+</body>
+</html>

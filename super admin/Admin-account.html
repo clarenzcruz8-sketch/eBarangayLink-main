@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="document-super-admin-dashboard-container">
+         <aside>
+                <div class="sidebar">
+                    <div class="logo">
+                        <img src="/src/logo.png" alt="">
+                    </div>
+                         <ul>
+                            <li  >
+                                
+                                <a href="super-admin-dashboard.html">Dashboard</a>
+                            </li>
+                            <li class="active">
+                               
+                              
+                                <a href="Admin-account.html">Admin Account</a>
+                            </li>
+                            <li>
+                               
+                              
+                                <a href="All-request.html">All Request</a>
+                            </li>
+                      
+
+                            <li>
+                               
+                                <a href="Roles-permission.html">Roles & Permission</a>
+                            </li>
+                            <!-- <li><a href="">Profile</a></li> -->
+                            <li>
+                                <span class="last-child">
+                                    
+                                 
+                                    <button class="logoutBtn" href="" id="logoutBtn">Logout </button>
+                                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>  
+            </aside>
+
+            <div class="SA-admin-account-main">
+                <div class="admin-account-header">
+                    <h1>Admin Accounts</h1>
+                </div>
+
+                <div >
+                    <button class="create-admin-btn" id="createAdminBtn">+Add Admin</button>
+
+                    <div class="create-admin-form">
+                        <div class="admin-detail-input">
+                            
+                            <label for="Name">Name</label>
+                            <input type="text" name="" id="">
+                            <label for="Email">Email</label>
+                            <input type="text" name="" id="">
+                            <label for="Role">Role</label>
+                            <input type="text" name="" id="">
+                            <label for="Role">Default Password</label>
+                            <input type="text" name="" id="">
+
+                            <button class="create-new-admin">Create</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="admin-table-container">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Login</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Juan</td>
+                                    <td>Secretary</td>
+                                    <td>Active</td>
+                                    <td>Today</td>
+                                    <td>
+                                        <button class="edit-btn">Edit</button>
+                                        <button class="disable-btn">Disable</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Maria</td>
+                                    <td>Captain</td>
+                                    <td>Active</td>
+                                    <td>Yesterday</td>
+                                    <td>
+                                        <button class="edit-btn">Edit</button>
+                                        <button class="disable-btn">Disable</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Paulo</td>
+                                    <td>Clerk</td>
+                                    <td>Active</td>
+                                    <td>Oct 4</td>
+                                    <td>
+                                        <button class="edit-btn">Edit</button>
+                                        <button class="disable-btn">Disable</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+               
+                    </div>  
+                    
+            </div>
+            <div class="superadmin-right-side">
+                <div class="audit-logs">
+                    <h1>Audit Logs</h1>
+                    <div class="audit-logs-notif">
+                        <p><span>Admin</span> Juan approved Request #122</p>
+                        <p><span>Admin</span> Maria edited payment settings</p>
+                      
+                    </div>
+                </div>
+            </div>
+
+     </div>
+
+     <script src="/app/super-admin-js/create-admin.js"></script>
+</body>
+</html>

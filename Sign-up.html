@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/src/cropped-logoicon.png" type="image/x-icon" />
+    <title>Barangay Parada Portal</title>
+    <link rel="stylesheet" href="/CSS/sign-up.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Background Shapes -->
+    <div class="bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="auth-container">
+      <!-- Header -->
+      <div class="auth-header">
+        <div class="logo-section">
+          <div class="logo-circle">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="logo-info">
+            <h1>Barangay Parada</h1>
+            <p>Digital Services Portal</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div class="auth-box login-box active" id="loginBox">
+        <div class="box-header">
+          <h2>Welcome Back</h2>
+          <p>Sign in to your account to continue</p>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <!-- Username -->
+          <div class="form-field">
+            <label for="loginUsername">Username</label>
+            <div class="input-container">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="loginUsername"
+                name="username"
+                placeholder="Enter your username"
+                autocomplete="username"
+                required
+              />
+            </div>
+            <span class="error-msg" id="loginUsernameError"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="form-field">
+            <label for="loginPassword">Password</label>
+            <div class="input-container">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                data-target="loginPassword"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <span class="error-msg" id="loginPasswordError"></span>
+          </div>
+
+          <!-- Forgot Password Link -->
+          <div class="form-footer">
+            <label class="remember-me">
+              <input type="checkbox" id="rememberMe" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-password" id="forgotPasswordLink">
+              <i class="fas fa-key"></i>
+              Forgot your password?
+            </a>
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>Sign In</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+
+          <!-- Switch to Signup -->
+          <div class="form-switch">
+            <p>
+              Don't have an account?
+              <a href="#" id="showSignup">Create one now</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- SIGNUP FORM -->
+      <div class="auth-box signup-box" id="signupBox">
+        <div class="box-header">
+          <h2>Create Your Account</h2>
+          <p>Join Barangay Parada community</p>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="progress-indicator">
+          <div class="progress-step active" data-step="1">
+            <div class="step-circle">
+              <span class="step-num">1</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Personal Info</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="2">
+            <div class="step-circle">
+              <span class="step-num">2</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Contact & Security</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="3">
+            <div class="step-circle">
+              <span class="step-num">3</span>
+              <i class="fas fa-check step-check"></i>
+            </div>
+            <span class="step-label">Verification</span>
+          </div>
+        </div>
+
+        <form id="signupForm" class="auth-form">
+          <!-- STEP 1: Personal Information -->
+          <div class="signup-step active" data-step="1">
+            <div class="step-header">
+              <i class="fas fa-user-circle"></i>
+              <h3>Personal Information</h3>
+            </div>
+
+            <!-- First Name & Last Name Row -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstName">
+                  First Name <span class="required">*</span>
+                </label>
+                <div class="input-container">
+                  <i class="fas fa-user"></i>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="e.g. Juan"
+                    autocomplete="given-name"
+                    required
+                  />
+                </div>
+                <span class="error-msg" id="SU_firstName"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="lastName">
+                  Last Name <span class="required">*</span>
+                </label>
+                <div class="input-container">
+                  <i class="fas fa-user"></i>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="e.g. Dela Cruz"
+                    autocomplete="family-name"
+                    required
+                  />
+                </div>
+                <span class="error-msg" id="SU_lastName"></span>
+              </div>
+            </div>
+
+            <!-- Middle Name -->
+            <div class="form-field">
+              <label for="middleName">
+                Middle Name <span class="optional">(Optional)</span>
+              </label>
+              <div class="input-container">
+                <i class="fas fa-user-tag"></i>
+                <input
+                  type="text"
+                  id="middleName"
+                  name="middleName"
+                  placeholder="e.g. Santos"
+                  autocomplete="additional-name"
+                />
+              </div>
+              <span class="error-msg" id="SU_middleName"></span>
+              <small class="field-hint">Leave blank if not applicable</small>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+              <label for="email">
+                Email Address <span class="required">*</span>
+              </label>
+              <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="e.g. juan.delacruz@email.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <span class="error-msg" id="SU_email"></span>
+              <small class="field-hint"
+                >Use a valid email address you can access</small
+              >
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-primary btn-block btn-next"
+              data-next="2"
+            >
+              <span>Continue</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- STEP 2: Contact & Security -->
+          <div class="signup-step" data-step="2">
+            <div class="step-header">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Contact & Security</h3>
+            </div>
+
+            <div class="form-field">
+              <label for="mobile">
+                Mobile Number <span class="required">*</span>
+              </label>
+              <div class="input-container">
+                <i class="fas fa-mobile-alt"></i>
+                <input
+                  type="tel"
+                  id="mobile"
+                  name="mobile"
+                  placeholder="09XXXXXXXXX"
+                  maxlength="11"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
+              <span class="error-msg" id="SU_mobile"></span>
+              <small class="field-hint"
+                >Philippine mobile number format: 09XXXXXXXXX</small
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="street">
+                Street <span class="required">*</span>
+              </label>
+              <div class="input-container select-container">
+                <i class="fas fa-map-marker-alt"></i>
+                <select id="street" name="street" required>
+                  <option value="" disabled selected>Select your street</option>
+                  <option value="Caybanban">Caybanban</option>
+                  <option value="Ibayong Tabon">Ibayong Tabon</option>
+                  <option value="De Jesus St.">De Jesus St.</option>
+                  <option value="Gubat St.">Gubat St.</option>
+                </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+              </div>
+              <span class="error-msg" id="SU_street"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="house">
+                House No. / Lot / Block <span class="optional">(Optional)</span>
+              </label>
+              <div class="input-container">
+                <i class="fas fa-home"></i>
+                <input
+                  type="text"
+                  id="house"
+                  name="house"
+                  placeholder="e.g. Block 5 Lot 12"
+                />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="username">
+                Username <span class="required">*</span>
+              </label>
+              <div class="input-container">
+                <i class="fas fa-at"></i>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Choose a username"
+                  autocomplete="username"
+                  required
+                />
+              </div>
+              <span class="error-msg" id="SU_username"></span>
+              <small class="field-hint"
+                >Must contain letters (cannot be numbers only)</small
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="password">
+                Password <span class="required">*</span>
+              </label>
+              <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Create a strong password"
+                  autocomplete="new-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  data-target="password"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <span class="error-msg" id="SU_password"></span>
+
+              <!-- Password Strength -->
+              <div class="password-strength" id="passwordStrength">
+                <div class="strength-bar">
+                  <div class="strength-fill"></div>
+                </div>
+                <span class="strength-text"
+                  >Password strength: <strong>Weak</strong></span
+                >
+                <div class="strength-requirements">
+                  <div class="req-item" data-req="length">
+                    <i class="fas fa-circle"></i>
+                    <span>At least 8 characters</span>
+                  </div>
+                  <div class="req-item" data-req="uppercase">
+                    <i class="fas fa-circle"></i>
+                    <span>One uppercase letter</span>
+                  </div>
+                  <div class="req-item" data-req="number">
+                    <i class="fas fa-circle"></i>
+                    <span>One number</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="confirmPassword">
+                Confirm Password <span class="required">*</span>
+              </label>
+              <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Re-enter your password"
+                  autocomplete="new-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  data-target="confirmPassword"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <span class="error-msg" id="SU_confirmpassword"></span>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-secondary btn-back"
+                data-prev="1"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-next"
+                data-next="3"
+              >
+                <span>Continue</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Verification -->
+          <div class="signup-step" data-step="3">
+            <div class="step-header">
+              <i class="fas fa-id-card"></i>
+              <h3>Verification & Confirmation</h3>
+            </div>
+
+            <div class="form-field">
+              <label for="idFile">
+                Valid ID <span class="required">*</span>
+              </label>
+              <div class="file-upload-area">
+                <input type="file" id="idFile" accept="image/*,.pdf" required />
+                <label for="idFile" class="file-upload-label">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span class="upload-text">Click to upload your valid ID</span>
+                  <span class="upload-hint"
+                    >Accepted formats: JPG, PNG, PDF (Maximum size: 5MB)</span
+                  >
+                </label>
+                <div class="file-preview" id="filePreview"></div>
+              </div>
+              <span class="error-msg" id="SU_vID"></span>
+              <small class="field-hint"
+                >Accepted IDs: National ID, Driver's License, Passport,
+                etc.</small
+              >
+            </div>
+
+            <div class="form-field">
+              <div class="terms-agreement">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="terms" name="terms" required />
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">
+                    I have read and agree to the
+                    <a href="#" target="_blank">Terms and Conditions</a> and
+                    <a href="#" target="_blank">Privacy Policy</a> of Barangay
+                    Parada
+                  </span>
+                </label>
+              </div>
+              <span class="error-msg" id="termsError"></span>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-secondary btn-back"
+                data-prev="2"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+              </button>
+              <button type="submit" class="btn btn-success btn-submit">
+                <i class="fas fa-check-circle"></i>
+                <span>Create Account</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Switch to Login -->
+          <div class="form-switch">
+            <p>
+              Already have an account?
+              <a href="#" id="showLogin">Sign in here</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <div class="auth-footer">
+        <p>&copy; 2024 Barangay Parada. All rights reserved.</p>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-icon success">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Account Created Successfully!</h3>
+        <p>
+          Welcome to Barangay Parada. Your account has been registered and is
+          pending verification. You will receive a confirmation email shortly.
+        </p>
+        <button class="btn btn-primary" id="closeSuccessModal">
+          Continue to Login
+        </button>
+      </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="closeForgotModal">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-icon">
+          <i class="fas fa-key"></i>
+        </div>
+        <h3>Reset Your Password</h3>
+        <p>
+          Enter your email address and we'll send you a link to reset your
+          password.
+        </p>
+
+        <form id="forgotPasswordForm">
+          <div class="form-field">
+            <label for="resetEmail">Email Address</label>
+            <div class="input-container">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="resetEmail"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+            <span class="error-msg" id="resetEmailError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fas fa-paper-plane"></i>
+            <span>Send Reset Link</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast-notification" id="toastNotification">
+      <div class="toast-content">
+        <div class="toast-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="toast-message">
+          <h4 class="toast-title">Success!</h4>
+          <p class="toast-text">Your message here</p>
+        </div>
+        <button class="toast-close" id="toastClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="toast-progress"></div>
+    </div>
+
+    <script src="/app/sign-up.js"></script>
+  </body>
+</html>

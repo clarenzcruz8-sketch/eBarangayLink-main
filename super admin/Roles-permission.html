@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="document-super-admin-roles">
+         <aside>
+                <div class="sidebar">
+                    <div class="logo">
+                        <img src="/src/logo.png" alt="">
+                    </div>
+                         <ul>
+                            <li  >
+                                
+                                <a href="super-admin-dashboard.html">Dashboard</a>
+                            </li>
+                            <li >
+                               
+                              
+                                <a href="Admin-account.html">Admin Account</a>
+                            </li>
+                            <li>
+                               
+                              
+                                <a href="All-request.html">All Request</a>
+                            </li>
+                          
+
+                            <li class="active">
+                               
+                                <a href="Roles-permission.html">Roles & Permission</a>
+                            </li>
+                            <!-- <li><a href="">Profile</a></li> -->
+                            <li>
+                                <span class="last-child">
+                                    
+                                 
+                                    <button class="logoutBtn" href="" id="logoutBtn">Logout </button>
+                                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>  
+            </aside>
+            <div class="main-content">
+                <div class="roles_header">
+                    <h1>Roles & Permissions</h1>
+                    <p>Review your roles and allocated ermission</p>
+                </div>
+
+                <table class="roles_table">
+                    <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Permission</th>
+                                <!-- Kung gusto niyo add to ↓↓ -->
+                                <!-- <th>Status</th> -->
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MariaCruz@gmail.com</td>
+                            <td>Admin</td>
+                            <td>
+                                <button id="enableBtn">Enable</button>
+                                <button id="disableBtn">Disable</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>JuanSta.Maria@gmail.com</td>
+                            <td>User</td>
+                            <td>
+                                <button id="enableBtn">Enable</button>
+                                <button id="disableBtn">Disable</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PauloHehe@gmail.com</td>
+                            <td>Admin</td>
+                            <td>
+                                <button id="enableBtn">Enable</button>
+                                <button id="disableBtn">Disable</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+     </div>
+
+     
+</body>
+</html>

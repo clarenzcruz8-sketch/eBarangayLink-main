@@ -1,0 +1,78 @@
+:root{
+    --Background: #FAFAFA;   
+    --Surface:    #FFFFFF;  
+    --Text:       #1C1C1C;   
+    --Subtext:    #6E6E6E;   
+    --Accent:     #FF6F61;  
+   --neutral-Border:     #E8E8E8;
+   --color-white: #fff;
+   --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary: #6C9BCF;
+   
+   --dark-blue:  #1e293b;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --color-info-dark: #7d8da1;
+
+    --neutral-lightest: #F2F2F2;
+    --neutral-lighter: #DAD9D8;
+    --azure-blue: #0065CC;
+    --azure-blue-darker: #003266;
+
+    /* mid tone */
+    --light-tone: #B6B4B2;
+
+
+    /* Font Family */
+    --font-family-IBM: 'IBM+Plex+Sans', sans-serif;
+    --font-family-mono: 'Space Mono', monospace;
+    --font-family-heading: 'heading-font' sans-serif;
+    --font-family-Opensans: 'Open sans', sans-serif;
+    --font-family-poppin: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'heading-font';
+    src: url(/src/fonts/Nunito-Italic-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Open sans';
+    src: url(/src/fonts/OpenSans_Condensed-Regular.ttf) format('trutype');
+}
+
+*::after::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    /* background: var(--neutral-lighter); */
+    background: whitesmoke;
+   
+}
+
+h1,h2,h3{
+    margin: 0;
+}
+
+img{
+    display: block;
+    width: 100%;
+    min-height: auto;
+}
+
+/* MEDIA QUERY */
+/* desktop 1440 */
+/* laptop 1024 */
+
+#logoutBtn{
+    border: none;
+    background: none; 
+    color: var(--color-info-dark);
+    font-family: var(--font-family-IBM);
+    font-size: 1.2rem;   
+}

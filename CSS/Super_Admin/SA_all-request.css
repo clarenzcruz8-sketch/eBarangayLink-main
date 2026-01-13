@@ -1,0 +1,45 @@
+.SA-auditlogs-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: var(--font-family-IBM);
+    background: white;
+    /* padding: 2rem; */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    margin-block: 1rem;
+}
+
+.SA-auditlogs-header h2{
+    margin-top: 2rem;
+}
+
+
+
+/* .SA-summary-table:hover{
+    box-shadow: none;
+    scale: 2;
+} */
+
+.SA-auditlogs-table:hover{
+    box-shadow: none;
+    scale: 1;
+    padding: 1rem;
+}
+
+.SA-auditlogs-table th{
+    padding: .9rem;
+    font-size: 12px;
+    text-align: center;
+    color: #1e293b;
+    background-color: #e5eef7;
+    font-weight: 200;
+}
+
+.SA-auditlogs-table tbody tr td{
+    font-size: 12px;
+    padding: .8rem;
+    /* padding-top: 10px; */
+    color: var(--color-info-dark);
+}

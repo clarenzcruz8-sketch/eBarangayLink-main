@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel= "icon" href="/src/cropped-logoicon.png" type="image/x-icon">
+  <title>Requests | Barangay Parada Admin</title>
+  <link rel="stylesheet" href="/CSS/Admin css/request.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="page-requests">
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>Barangay Parada</h2>
+    </div>
+    <nav class="nav-menu">
+      <a href="/admin/admin-dashboard.html" class="nav-item">
+        <span>Dashboard</span>
+      </a>
+      <a href="/admin/requests.html" class="nav-item active">
+        <span>Requests</span>
+      </a>
+      <a href="/admin/payments.html" class="nav-item">
+        <span>Payments</span>
+      </a>
+    </nav>
+    <div class="logout">
+      <a href="/Sign-up.html" class="nav-item">
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <header class="top-bar">
+      <h1>Document Requests</h1>
+    </header>
+
+    <!-- SEARCH & FILTER -->
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search by name or ID..." />
+      <select id="status-filter">
+        <option value="all">All Status</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+
+    <!-- REQUESTS TABLE -->
+    <section class="requests-table full">
+      <div class="table-wrapper">
+        <table id="requests-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User Name</th>
+              <th>Document</th>
+              <th>Date Applied</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-status="pending">
+              <td>REQ001</td>
+              <td>John Doe</td>
+              <td>Barangay Clearance</td>
+              <td>Nov 03, 2025</td>
+              <td><span class="status pending">Pending</span></td>
+              <td><button class="view-btn" data-id="REQ001">View</button></td>
+            </tr>
+            <tr data-status="approved">
+              <td>REQ002</td>
+              <td>Jane Smith</td>
+              <td>Certificate of Residency</td>
+              <td>Nov 02, 2025</td>
+              <td><span class="status approved">Approved</span></td>
+              <td><button class="view-btn" data-id="REQ002">View</button></td>
+            </tr>
+            <tr data-status="pending">
+              <td>REQ003</td>
+              <td>Maria Santos</td>
+              <td>Indigency Certificate</td>
+              <td>Nov 05, 2025</td>
+              <td><span class="status pending">Pending</span></td>
+              <td><button class="view-btn" data-id="REQ003">View</button></td>
+            </tr>
+            <tr data-status="rejected">
+              <td>REQ004</td>
+              <td>Carlos Garcia</td>
+              <td>Good Moral Cert</td>
+              <td>Nov 06, 2025</td>
+              <td><span class="status rejected">Rejected</span></td>
+              <td><button class="view-btn" data-id="REQ004">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="request-modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Request Details</h2>
+      <div id="modal-body">
+        <!-- Filled by JS -->
+      </div>
+      <div class="actions">
+        <button id="approve-btn" class="approve-btn">Approve</button>
+        <button id="reject-btn" class="reject-btn">Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app/Admin Javascript/request.js"></script>
+</body>
+</html>

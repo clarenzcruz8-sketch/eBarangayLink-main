@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel= "icon" href="/src/cropped-logoicon.png" type="image/x-icon">
+  <title>Payments | Barangay Parada Admin</title>
+  <link rel="stylesheet" href="/CSS/Admin css/payment.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="page-payments">
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>Barangay Parada</h2>
+    </div>
+    <nav class="nav-menu">
+      <a href="/admin/admin-dashboard.html" class="nav-item">
+        <span>Dashboard</span>
+      </a>
+      <a href="/admin/requests.html" class="nav-item">
+        <span>Requests</span>
+      </a>
+      <a href="/admin/payments.html" class="nav-item active">
+        <span>Payments</span>
+      </a>
+    </nav>
+    <div class="logout">
+      <a href="/Sign-up.html" class="nav-item">
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <h1>Payments</h1>
+    </header>
+
+    <div class="filters">
+      <input type="text" id="search-pay" placeholder="Search by name or ID..." />
+      <select id="pay-status">
+        <option value="all">All Payments</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+
+    <section class="requests-table full">
+      <div class="table-wrapper">
+        <table id="payments-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User</th>
+              <th>Amount</th>
+              <th>Date Paid</th>
+              <th>Status</th>
+              <th>Proof</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-status="completed">
+              <td>PAY001</td>
+              <td>John Doe</td>
+              <td>₱250.00</td>
+              <td>Nov 03, 2025</td>
+              <td><span class="status approved">Completed</span></td>
+              <td><button class="proof-btn" data-img="proof1.jpg">View Proof</button></td>
+            </tr>
+            <tr data-status="pending">
+              <td>PAY002</td>
+              <td>Jane Smith</td>
+              <td>₱180.00</td>
+              <td>Nov 04, 2025</td>
+              <td><span class="status pending">Pending</span></td>
+              <td><button class="proof-btn" data-img="proof2.jpg">View Proof</button></td>
+            </tr>
+            <tr data-status="completed">
+              <td>PAY003</td>
+              <td>Maria Santos</td>
+              <td>₱300.00</td>
+              <td>Nov 05, 2025</td>
+              <td><span class="status approved">Completed</span></td>
+              <td><button class="proof-btn" data-img="proof3.jpg">View Proof</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  
+
+  <!-- IMAGE MODAL -->
+  <div class="modal" id="proof-modal">
+    <div class="modal-content proof">
+      <span class="close-btn">&times;</span>
+      <img id="proof-img" src="" alt="Payment Proof" />
+      <p id="proof-caption"></p>
+    </div>
+  </div>
+
+  <script src="/app/Admin Javascript/payments.js"></script>
+</body>
+</html>

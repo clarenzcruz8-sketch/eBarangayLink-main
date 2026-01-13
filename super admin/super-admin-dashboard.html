@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <title>Super Admin Dashboard</title>
+</head>
+<body>
+     <div class="document-super-admin-dashboard-container">
+         <aside>
+                <div class="sidebar">
+                    <div class="logo">
+                        <img src="/src/logo.png" alt="">
+                    </div>
+                         <ul>
+                            <li  class="active">
+                                
+                                <a href="super-admin-dashboard.html">Dashboard</a>
+                            </li>
+                            <li>
+                               
+                              
+                                <a href="Admin-account.html">Admin Account</a>
+                            </li>
+                            <li>
+                               
+                              
+                                <a href="All-request.html">All Request</a>
+                            </li>
+                            <!-- <li>
+                               
+                                <a href="SA-payment.htm">Payment</a>
+                            </li> -->
+
+                             <li>
+                               
+                                <a href="Roles-permission.html">Roles & Permission</a>
+                            </li>
+                            <!-- <li><a href="">Profile</a></li> -->
+                            <li>
+                                <span class="last-child">
+                                    
+                                 
+                                    <button class="logoutBtn" href="" id="logoutBtn">Logout </button>
+                                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>  
+            </aside>
+
+
+            <div class="SA-dashboard-main-container">
+                <div class="SA-header">
+                    <h1>Barangay Parada</h1>
+                </div>
+
+                
+                <h2>Quick Summary</h2>
+                  <div class="SA-user-summary-cards">
+
+                            <div class="SA-user-summary-card">
+                                <h3 class="SA-summary-card-header">Total Requests </h3>
+                                <p class="SA-summary-number">2,140</p>
+                                <div class="SA-card-overlay"></div>
+                            </div>
+
+                            <div class="SA-user-summary-card">
+                                <h3 class="SA-summary-card-header">Approved</h3>
+                                <p class="SA-summary-number">1,420</p>
+                                <div class="SA-card-overlay"></div>
+                            </div>
+
+                            <div class="SA-user-summary-card">
+                                <h3 class="SA-summary-card-header">Pending</h3>
+                                <p class="SA-summary-number">320</p>
+                                <div class="SA-card-overlay"></div>
+                            </div>
+                            
+                            <div class="SA-user-summary-card">
+                                <h3 class="SA-summary-card-header">Total Payments</h3>
+                                <p class="SA-summary-number">₱82,500</p>
+                                <div class="SA-card-overlay"></div>
+                            </div>
+                        </div>
+
+                        <div class="payment-summary-table">
+                            <h2>Payments Overview</h2>
+                            <table class="SA-payment-summary-table">
+                                <thead>
+                                    <tr>
+                                        <th>Payment ID</th>
+                                        <th>Resident Name</th>
+                                        <th>Document Type</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Status</th>
+                                        <th>Verified By</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>PMT-001</td>
+                                        <td>Juan Dela Cruz</td>
+                                        <td>Barangay Clearance</td>
+                                        <td>₱50.00</td>
+                                        <td>GCash</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                        <td>—</td>
+                                        <td>Nov 2, 2025</td>
+                                        <td><button class="btn-view">View</button></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>PMT-002</td>
+                                        <td>Kurt Santos</td>
+                                        <td>Certificate of Residency</td>
+                                        <td>₱30.00</td>
+                                        <td>Cash</td>
+                                        <td><span class="status verified">Verified</span></td>
+                                        <td>Maria (Admin)</td>
+                                        <td>Oct 25, 2025</td>
+                                        <td><button class="btn-view">View</button></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>PMT-003</td>
+                                        <td>Albert Reyes</td>
+                                        <td>Good Moral</td>
+                                        <td>₱0.00</td>
+                                        <td>Free</td>
+                                        <td><span class="status verified">Approved</span></td>
+                                        <td>System</td>
+                                        <td>Oct 20, 2025</td>
+                                        <td><button class="btn-view">View</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="all-request">
+                            <h2>List of All Request</h2>
+                            <table class="SA-summary-table">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Document Type</th>
+                                <th>Date Requested</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Dela Cruz</td>
+                                <td>Residency</td>
+                                <td>Nov 2, 2025</td>
+                                <td><span class="status pending">Pending</span></td>
+                                 <td><button class="SA-download-btn" disabled style="opacity: 0.6;">View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>Kurt</td>
+                                <td>Barangay Clearance</td>
+                                <td>Oct 25, 2025</td>
+                                <td><span class="status ready">Approved</span></td>
+                                 <td><button class="SA-download-btn" disabled style="opacity: 0.6;">View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>Albert</td>
+                                <td>Good Moral</td>
+                                <td>Oct 20, 2025</td>
+                                <td><span class="status ready">Approved</span></td>
+                                 <td><button class="SA-download-btn" disabled style="opacity: 0.6;">View</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        
+
+
+                        <div class="admin-table-header">
+                            <h2>Admin Account Management</h2>
+                            <button class="add-admin-btn">+ Add Admin</button>
+                        </div>
+                      <div class="admin-table-container">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Login</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Juan</td>
+                                    <td>Secretary</td>
+                                    <td>Active</td>
+                                    <td>Today</td>
+                                    <td>
+                                        <button class="edit-btn">Edit</button>
+                                        <button class="disable-btn">Disable</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Maria</td>
+                                    <td>Captain</td>
+                                    <td>Active</td>
+                                    <td>Yesterday</td>
+                                    <td>
+                                        <button class="edit-btn">Edit</button>
+                                        <button class="disable-btn">Disable</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Paulo</td>
+                                    <td>Clerk</td>
+                                    <td>Active</td>
+                                    <td>Oct 4</td>
+                                    <td>
+                                        <button class="edit-btn">Edit</button>
+                                        <button class="disable-btn">Disable</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+               
+                    </div>  
+            </div>
+
+            <div class="superadmin-right-side">
+                <div class="audit-logs">
+                    <h1>Audit Logs</h1>
+                    <div class="audit-logs-notif">
+                        <p><span>Admin</span> Juan approved Request #122</p>
+                        <p><span>Admin</span> Maria edited payment settings</p>
+                        <p>Clerk Paolo printed certificate #091</p>
+                        <p>Failed <span>login</span> attemp detected</p>
+                    </div>
+                </div>
+            </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+.document-super-admin-roles{
+    display: grid;
+    grid-template-columns: 15rem auto;
+    width: 96%;
+    /* margin: 0 auto; */
+    gap: 1rem;
+}
+
+.main-content{
+    margin-block: 2rem;
+}
+
+.roles_header{
+    border-radius: 15px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+.roles_header h1{
+    font-size: 28px;
+}
+
+.roles_table{
+    width: 100%;
+    margin-block: 2rem;
+    border-collapse: collapse;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+.roles_table  th{
+    background-color: #e5eef7;
+    padding: 1rem;
+    
+}
+
+.roles_table td{
+    
+}
+
+
+.roles_table button{
+    height: 40px;
+    padding: .5rem;
+    border-radius: 15px;
+}
+
+#enableBtn{
+    background: #27AE60;
+    color: white;
+}
+
+#disableBtn{
+    background:  #EB5757;
+    color: white;
+}
