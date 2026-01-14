@@ -672,7 +672,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (forgotPasswordLink) {
     forgotPasswordLink.addEventListener('click', function(e) {
       e.preventDefault();
-      forgotPasswordModal.classList.add('active');
+      // forgotPasswordModal.classList.add('active');
+      window.location.href = "forgotPassword.html";
     });
   }
   
