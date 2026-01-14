@@ -15,7 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const recordsRoutes = require("./records");
 const paymentRoutes = require("./payment");
+const adminRequests = require("./adminRequests");
 
+app.use("/api", adminRequests);
 app.use("/api", paymentRoutes);
 app.use("/api", recordsRoutes);
 

@@ -772,7 +772,7 @@ loginForm.addEventListener('submit', function (e) {
       .then(data => {
         console.log("📦 LOGIN RESPONSE:", data);
         if (data.userId) {
-    localStorage.setItem("userId", data.userId);
+    localStorage.setItem("user_id", data.userId);
        }
     localStorage.setItem("accountId", data.account_id);
 

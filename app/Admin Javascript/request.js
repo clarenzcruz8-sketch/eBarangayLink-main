@@ -1,10 +1,44 @@
 // request.js (Enhanced with confirmation dialog, pagination, and table sorting)
-const requests = {
-  REQ001: { id: "REQ001", user: "John Doe", doc: "Barangay Clearance", date: "Nov 03, 2025", status: "Pending", file: "clearance_john.pdf" },
-  REQ002: { id: "REQ002", user: "Jane Smith", doc: "Certificate of Residency", date: "Nov 02, 2025", status: "Approved", file: "residency_jane.jpg" },
-  REQ003: { id: "REQ003", user: "Maria Santos", doc: "Indigency Certificate", date: "Nov 05, 2025", status: "Pending", file: "indigency_maria.docx" },
-  REQ004: { id: "REQ004", user: "Carlos Garcia", doc: "Good Moral Cert", date: "Nov 06, 2025", status: "Rejected", file: "moral_carlos.pdf" }
-};
+const tableBody = document.querySelector("#requests-table tbody");
+
+fetch("http://localhost:3000/api/admin/requests")
+  .then(res => res.json())
+  .then(data => renderTable(data))
+  .catch(err => console.error(err));
+
+function renderTable(requests) {
+  tableBody.innerHTML = "";
+
+  requests.forEach(r => {
+    const tr = document.createElement("tr");
+    tr.dataset.status = r.status;
+
+    tr.innerHTML = `
+      <td>REQ-${r.id}</td>
+      <td>${r.first_name} ${r.last_name}</td>
+      <td>${formatDocType(r.form_type)}</td>
+      <td>${formatDate(r.created_at)}</td>
+      <td><span class="status ${r.status}">${capitalize(r.status)}</span></td>
+      <td>
+        <button class="view-btn" onclick="openModal(${r.id})">View</button>
+      </td>
+    `;
+
+    tableBody.appendChild(tr);
+  });
+}
+
+function formatDocType(type) {
+  return type.replace(/_/g, " ").toUpperCase();
+}
+
+function formatDate(date) {
+  return new Date(date).toLocaleDateString();
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 let currentId = "";
 
