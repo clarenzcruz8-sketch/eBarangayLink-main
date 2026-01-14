@@ -2,37 +2,37 @@ const express = require("express");
 const router = express.Router();
 const db = require("./db");
 
-router.get("/admin/requests", (req, res) => {
-  console.log("✅ /api/admin/requests HIT");
-  res.json({ ok: true });
-});
+console.log("🔥 adminRequests.js loaded");
+
 /**
  * GET all document requests (admin)
  */
-router.get("/admin/requests", async (req, res) => {
-  try {
-    const sql = `
-      SELECT
-        dr.id,
-        dr.form_type,
-        dr.status,
-        dr.created_at,
-        u.first_name,
-        u.last_name
-      FROM document_requests dr
-      JOIN users u ON u.id = dr.user_id
-      ORDER BY dr.created_at DESC
-    `;
+router.get("/admin/requests", (req, res) => {
+  console.log("✅ /api/admin/requests HIT");
 
-    const [rows] = await db.query(sql); // 👈 STILL NEEDED
+  const sql = `
+    SELECT
+      dr.id,
+      u.username AS user_name,
+      dr.document_type,
+      dr.status,
+      dr.created_at
+    FROM document_requests dr
+    JOIN users u ON u.id = dr.user_id
+    ORDER BY dr.created_at DESC
+  `;
 
-    console.log("🟢 Admin requests rows:", rows);
+  db.query(sql, (err, rows) => {
+    if (err) {
+      console.error("❌ Admin requests error:", err);
+      return res.status(500).json({ error: "Failed to fetch requests" });
+    }
 
+    console.log("📦 ROWS SENT TO FRONTEND:", rows);
+
+    // ✅ MUST BE ARRAY
     res.json(rows);
-  } catch (err) {
-    console.error("❌ Admin requests error:", err);
-    res.status(500).json({ error: err.message });
-  }
+  });
 });
 
 /**
@@ -52,6 +52,7 @@ router.put("/admin/requests/:id", (req, res) => {
       console.error("❌ Status update error:", err);
       return res.status(500).json({ error: "Update failed" });
     }
+
     res.json({ message: "Status updated" });
   });
 });

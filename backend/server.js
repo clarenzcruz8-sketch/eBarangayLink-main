@@ -16,7 +16,13 @@ app.use(express.urlencoded({ extended: true }));
 const recordsRoutes = require("./records");
 const paymentRoutes = require("./payment");
 const adminRequests = require("./adminRequests");
+const userDashboardRoutes = require('./user-dashboard');
+const adminPayments = require("./admin-payment");
+const adminRoles = require("./rolesandpermissions");
 
+app.use("/api", adminRoles);
+app.use("/api", adminPayments);
+app.use("/api/user/dashboard", userDashboardRoutes);
 app.use("/api", adminRequests);
 app.use("/api", paymentRoutes);
 app.use("/api", recordsRoutes);

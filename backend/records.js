@@ -8,7 +8,7 @@ router.get("/records/user/:userId", (req, res) => {
   const sql = `
     SELECT
       dr.id AS document_id,
-      dr.form_type,
+      dr.document_type,
       dr.created_at,
       dr.status AS approval_status,
       p.status AS payment_status
