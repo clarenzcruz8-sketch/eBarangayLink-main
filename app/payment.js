@@ -3,7 +3,73 @@ const inPersonDisplay = document.getElementById('inPersonDisplay');
 const gCashBtn = document.getElementById('gCashBtn');
 const inPersonBtn = document.getElementById('inPerson');
 
+document.addEventListener("DOMContentLoaded", async () => {
+  const userId = localStorage.getItem("userId");
 
+  const res = await fetch(
+    `http://localhost:3000/api/payments/user/${userId}`
+  );
+  const payments = await res.json();
+
+  const tbody = document.querySelector(".fee-summary tbody");
+  tbody.innerHTML = "";
+
+  if (!Array.isArray(payments)) {
+  console.error("Expected array but got:", payments);
+  return;
+  }
+  payments.forEach(p => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${p.document_type}</td>
+      <td>${p.purpose}</td>
+      <td>₱${p.amount}</td>
+      <td>${p.reference_no}</td>
+      <td>${p.status === "paid" ? "🟢Paid" : "🟡Pending"}</td>
+    `;
+
+    tr.onclick = () => selectPayment(p.id);
+    tbody.appendChild(tr);
+  });
+});
+
+let selectedPaymentId = null;
+
+function selectPayment(paymentId) {
+  selectedPaymentId = paymentId;
+}
+
+document
+  .getElementById("submitPaymentBtn")
+  .addEventListener("click", async () => {
+
+    if (!selectedPaymentId) {
+      alert("Select a document to pay");
+      return;
+    }
+
+    const fileInput = document.querySelector(".upload-box input");
+    if (!fileInput.files.length) {
+      alert("Upload receipt first");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("payment_id", selectedPaymentId);
+    formData.append("receipt_file", fileInput.files[0]);
+
+    const res = await fetch(
+      "http://localhost:3000/api/payments/upload-receipt",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    const data = await res.json();
+    alert(data.message);
+  });
 
 displayBox.style.display = 'flex';
 if (gCashBtn) {

@@ -346,12 +346,48 @@ case "good_moral":
       return res.status(400).json({ message: "Invalid form type" });
   }
 console.log("🧪 FINAL VALUES:", values);
-  db.query(sql, values, (err) => {
-    if (err) {
-      console.error("❌ DB ERROR:", err);
-      return res.status(500).json({ message: "Database error" });
+  db.query(sql, values, (err, result) => {
+  if (err) {
+    console.error("❌ DB ERROR:", err);
+    return res.status(500).json({ message: "Database error" });
+  }
+
+  // ✅ 1. Get the newly created document ID
+  const documentRequestId = result.insertId;
+
+  // ✅ 2. Create payment row
+  const paymentSql = `
+    INSERT INTO payments
+    (
+      user_id,
+      document_request_id,
+      document_type,
+      amount,
+      status
+    )
+    VALUES (?, ?, ?, ?, 'pending')
+  `;
+
+  // You can adjust amounts per document later
+  const paymentValues = [
+    user_id,
+    documentRequestId,
+    formType,
+    100 // sample amount
+  ];
+
+  db.query(paymentSql, paymentValues, (payErr) => {
+    if (payErr) {
+      console.error("❌ PAYMENT INSERT ERROR:", payErr);
+      return res.status(500).json({ message: "Payment creation failed" });
     }
-    res.json({ message: "Document submitted successfully" });
+
+    // ✅ 3. Final success response
+    res.json({
+      message: "Document submitted successfully",
+      payment_status: "pending"
+    });
   });
+});
 });
 module.exports = router;

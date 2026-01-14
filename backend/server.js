@@ -13,6 +13,18 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const recordsRoutes = require("./records");
+const paymentRoutes = require("./payment");
+
+app.use("/api", paymentRoutes);
+app.use("/api", recordsRoutes);
+
+// ================= START SERVER =================
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`🟢 Server running on port ${PORT}`);
+});
+
 // ================= SIGNUP =================
 app.post("/api/signup", async (req, res) => {
   console.log("🔥 SIGNUP ROUTE HIT");

@@ -19,7 +19,11 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
-
+    
+res.json({
+  success: true,
+  user_id: user.id
+});
     const result = await res.json();
 
     if (res.ok) {
