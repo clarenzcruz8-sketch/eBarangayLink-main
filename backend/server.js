@@ -19,7 +19,9 @@ const adminRequests = require("./adminRequests");
 const userDashboardRoutes = require('./user-dashboard');
 const adminPayments = require("./admin-payment");
 const adminRoles = require("./rolesandpermissions");
+const forgotPassword = require("./forget-password");
 
+app.use("/api", forgotPassword);
 app.use("/api", adminRoles);
 app.use("/api", adminPayments);
 app.use("/api/user/dashboard", userDashboardRoutes);
