@@ -1042,11 +1042,13 @@ button {
 .demo-section {
   background-color: var(--gov-gray-light);
   position: relative;
+  padding: 80px 0;
 }
 
 .demo-container {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .demo-video-wrapper {
@@ -1055,22 +1057,32 @@ button {
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   background-color: #000;
+  aspect-ratio: 16 / 9; /* Modern way to maintain aspect ratio */
 }
 
-.demo-video-wrapper::before {
-  content: "";
-  display: block;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 16 / 9) {
+  .demo-video-wrapper::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+
+  .demo-video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
-.demo-video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.demo-video-wrapper video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
+/* Video Play Overlay */
 .video-play-overlay {
   position: absolute;
   top: 0;
@@ -1087,7 +1099,13 @@ button {
   justify-content: center;
   z-index: 10;
   cursor: pointer;
-  transition: var(--transition);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.video-play-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .video-play-overlay:hover {
@@ -1098,21 +1116,84 @@ button {
   );
 }
 
+/* Thumbnail inside overlay */
+.video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Play Button */
 .video-play-btn {
   width: 100px;
   height: 100px;
   background-color: white;
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gov-blue);
-  transition: var(--transition);
-  box-shadow: var(--shadow-xl);
+  color: var(--gov-blue, #0038a8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .video-play-btn:hover {
   transform: scale(1.1);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.video-play-btn:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+}
+
+.video-play-btn svg {
+  margin-left: 8px; /* Center the play icon visually */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .demo-section {
+    padding: 60px 0;
+  }
+
+  .video-play-btn {
+    width: 70px;
+    height: 70px;
+  }
+
+  .video-play-btn svg {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .video-play-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .demo-video-wrapper {
+    border-radius: 12px;
+  }
 }
 
 /* === DEVELOPERS SECTION === */
